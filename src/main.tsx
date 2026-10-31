@@ -47,7 +47,7 @@ function App() {
   useEffect(() => { if (legal) legalRef.current?.showModal(); }, [legal]);
   return <MotionConfig reducedMotion="user"><a className="skip" href="#conteudo">Pular para o conteúdo</a><main className="site" id="conteudo">
     <div className="topbar"><Leaf size={14}/> COMECE SUA ROTINA DE PILATES EM CASA</div>
-    {import.meta.env.DEV && !checkoutReady && <aside className="dev-notice"><Info size={16}/> Ambiente de desenvolvimento: checkouts pendentes. Publicação bloqueada.</aside>}
+    {import.meta.env.DEV && !checkoutReady && <aside className="dev-notice"><Info size={16}/> Ambiente de desenvolvimento: checkouts pendentes.</aside>}
     <section className="hero"><span className="badge"><i/> GUIA DIGITAL • ACESSO APÓS A COMPRA</span><h1>PILATES EM CASA <span>Mais movimento e bem-estar para sua rotina</span></h1><p className="intro">Conheça exercícios ilustrados, rotinas organizadas e orientações práticas para começar a explorar o Pilates no conforto de casa.</p><Video/><CTA/><p className="hero-note"><FileText size={14}/> Material digital em PDF <span>•</span> Consulte onde quiser</p></section>
     <section><Title subtitle="Um guia organizado para aprender exercícios e criar uma rotina de movimento em casa.">O que você vai receber</Title><div className="cards">{receive.map(([Icon, title, text]) => <article className="feature" key={title}><span className="icon"><Icon size={25}/></span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
     <section><Title>Por que escolher o Pilates em Casa?</Title><div className="cards">{benefits.map(([Icon, title, text]) => <article className="feature green" key={title}><span className="icon"><Icon size={25}/></span><h3>{title}</h3><p>{text}</p></article>)}</div><CTA/></section>

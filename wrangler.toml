@@ -1,2 +1,6 @@
-name = "pilates-em-casa"
-pages_build_output_dir = "dist"
+name = "pilates"
+compatibility_date = "2026-10-31"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"

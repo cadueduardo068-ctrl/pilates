@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-`npm run build` verifica TypeScript e gera uma versão de revisão em `dist`. Essa versão não significa liberação comercial.
+`npm run build` e `npm run build:production` verificam TypeScript e geram o site em `dist`. O build não exige variáveis comerciais; sem links válidos, os botões de compra permanecem desabilitados.
 
 ## Concluir a configuração
 
@@ -22,9 +22,13 @@ npm run dev
 5. Revise e finalize os textos de privacidade, termos e reembolso em `src/main.tsx` conforme a operação comercial real. Confirme como ocorre a entrega no checkout; atualize a FAQ se necessário.
 6. Após a revisão, defina `VITE_COMMERCIAL_REVIEWED=true`.
 
-## Cloudflare Pages
+## Cloudflare Workers e Pages
 
-Diretório raiz: esta pasta. Comando de build: **`npm run build:production`**. Saída: **`dist`**. Configure as variáveis `VITE_` no ambiente de build do Pages; elas são públicas e não devem conter segredos. O comando de produção bloqueia checkouts ausentes, iguais, de exemplo ou fora da Cakto, dados comerciais ausentes e vídeo indisponível. Não configure o comando de revisão como build de publicação.
+No Workers Builds, use esta pasta como diretório raiz, **`npm run build:production`** como comando de build e **`npx wrangler deploy`** como comando de deploy. O `wrangler.toml` publica os arquivos de `dist` no Worker `pilates`, incluindo o fallback de navegação da aplicação. Não é necessário um Worker com código “Hello World”.
+
+Para Cloudflare Pages, use o mesmo comando de build e **`dist`** como diretório de saída; o deploy é gerenciado pelo Pages.
+
+As variáveis `VITE_` são opcionais para publicar o site e públicas: não devem conter segredos. Configure-as no ambiente de build para habilitar checkouts e preencher informações comerciais. A verificação comercial pode ser executada separadamente com **`npm run validate:commercial`**; ela não bloqueia build nem deploy.
 
 ## Eventos e privacidade
 
@@ -32,5 +36,5 @@ Nenhum rastreador é instalado. O clique no checkout emite somente um evento loc
 
 ## Pendências externas
 
-Vídeo enviado e links específicos da Cakto foram configurados em .env.local. PDFs, prévias reais e informações comerciais ainda aguardam envio. A publicação permanece bloqueada pela revisão comercial pendente. O SVG continua como miniatura gráfica, sem representar página do produto ou depoimento verificado.
+O vídeo está presente em `public/videos/pilates.mp4`; configure `VITE_VIDEO_READY=true` para exibi-lo. Links da Cakto e dados comerciais devem ser configurados no ambiente de build; arquivos `.env.local` não são versionados. PDFs, prévias reais e informações comerciais ainda aguardam envio. O site pode ser publicado enquanto esses dados são preparados. O SVG continua como miniatura gráfica, sem representar página do produto ou depoimento verificado.
 
