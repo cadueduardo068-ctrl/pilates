@@ -1,6 +1,6 @@
 export const config = {
   name: 'Pilates em Casa',
-  video: { src: '/videos/pilates.mp4', poster: '/images/video-poster.svg', ready: import.meta.env.VITE_VIDEO_READY === 'true', dramatization: false },
+  video: { src: '/videos/pilates.mp4', poster: '/images/video-poster.svg', ready: true, dramatization: false },
   contact: import.meta.env.VITE_CONTACT_EMAIL || '',
   seller: import.meta.env.VITE_SELLER_NAME || '',
   support: import.meta.env.VITE_SUPPORT_TERMS || '',

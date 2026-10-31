@@ -16,7 +16,7 @@ npm run dev
 ## Concluir a configuração
 
 1. Copie `.env.example` para `.env.local` e informe os dois links diferentes e reais da Cakto, responsável, e-mail, suporte e reembolso.
-2. Coloque o vídeo final em `public/videos/pilates.mp4`; habilite `VITE_VIDEO_READY=true`. Substitua a miniatura em `public/images/video-poster.svg` ou ajuste o caminho em `src/config.ts`. Se houver atriz virtual, configure `video.dramatization=true`.
+2. O vídeo em `public/videos/pilates.mp4` é exibido automaticamente, sem variável de ambiente. Substitua a miniatura em `public/images/video-poster.svg` ou ajuste o caminho em `src/config.ts`. Se houver atriz virtual, configure `video.dramatization=true`.
 3. Em `src/config.ts`, cadastre `previews` com imagens otimizadas extraídas dos PDFs finais. O carrossel funciona por toque, botões e indicadores quando há imagens. A lista vazia não exibe páginas inventadas.
 4. Confira se os PDFs finais correspondem a cada inclusão anunciada. Cadastre somente depoimentos reais e autorizados, marcados como verificados.
 5. Revise e finalize os textos de privacidade, termos e reembolso em `src/main.tsx` conforme a operação comercial real. Confirme como ocorre a entrega no checkout; atualize a FAQ se necessário.
@@ -36,5 +36,5 @@ Nenhum rastreador é instalado. O clique no checkout emite somente um evento loc
 
 ## Pendências externas
 
-O vídeo está presente em `public/videos/pilates.mp4`; configure `VITE_VIDEO_READY=true` para exibi-lo. Links da Cakto e dados comerciais devem ser configurados no ambiente de build; arquivos `.env.local` não são versionados. PDFs, prévias reais e informações comerciais ainda aguardam envio. O site pode ser publicado enquanto esses dados são preparados. O SVG continua como miniatura gráfica, sem representar página do produto ou depoimento verificado.
+O vídeo está presente em `public/videos/pilates.mp4` e é exibido automaticamente. Links da Cakto e dados comerciais devem ser configurados no ambiente de build; arquivos `.env.local` não são versionados. PDFs, prévias reais e informações comerciais ainda aguardam envio. O site pode ser publicado enquanto esses dados são preparados. O SVG continua como miniatura gráfica, sem representar página do produto ou depoimento verificado.
 
