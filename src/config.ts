@@ -9,8 +9,8 @@ export const config = {
   previews: [] as { src: string; title: string; alt: string }[],
   testimonials: [] as { name: string; quote: string; verified: boolean }[],
   plans: [
-    { id: 'basico', name: 'Básico', price: 19.90, checkout: import.meta.env.VITE_CHECKOUT_BASICO || '', items: ['Guia digital de 25 páginas', '16 exercícios ilustrados', '3 rotinas organizadas', 'Plano de 4 semanas', 'Orientações básicas de postura e respiração', 'Entrega digital em PDF'] },
-    { id: 'premium', name: 'Premium', price: 29.90, checkout: import.meta.env.VITE_CHECKOUT_PREMIUM || '', items: ['Guia ampliado de aproximadamente 40 páginas ou mais', '30 exercícios ilustrados', '5 rotinas organizadas', 'Plano de 6 semanas', 'Adaptações para iniciantes', 'Explicações detalhadas de postura e respiração', 'Diário de acompanhamento', 'Conteúdo complementar sobre organização da prática'] },
+    { id: 'basico', name: 'Básico', price: 19.90, checkout: import.meta.env.VITE_CHECKOUT_BASICO || 'https://pay.cakto.com.br/39irvdt_1266920', items: ['Guia digital de 25 páginas', '16 exercícios ilustrados', '3 rotinas organizadas', 'Plano de 4 semanas', 'Orientações básicas de postura e respiração', 'Entrega digital em PDF'] },
+    { id: 'premium', name: 'Premium', price: 29.90, checkout: import.meta.env.VITE_CHECKOUT_PREMIUM || 'https://pay.cakto.com.br/3bmpz3u_1266964', items: ['Guia ampliado de aproximadamente 40 páginas ou mais', '30 exercícios ilustrados', '5 rotinas organizadas', 'Plano de 6 semanas', 'Adaptações para iniciantes', 'Explicações detalhadas de postura e respiração', 'Diário de acompanhamento', 'Conteúdo complementar sobre organização da prática'] },
   ],
 };
 export function validCheckout(value: string) {
